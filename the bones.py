@@ -188,14 +188,228 @@ off one list and append it to another and use negative indexing to reference the
 #         print('Stopping...')
 #-------------------
 
-i = 1
-while i < 4:
-    print('\nOuter Loop Iteration:,', i)
-    i += 1
-    j = i
-    while j < 4:
-        print('\tInner Loop Iteration:'.j)
-        j += 1
+# i = 1
+# while i < 4:
+#     print('\nOuter Loop Iteration:,', i)
+#     i += 1
+#     j = i
+#     while j < 5:
+#         print('\tInner Loop Iteration:', j)
+#         j += 1
+                                        # Outer Loop Iteration:, 1
+                                        # 	Inner Loop Iteration: 2
+                                        # 	Inner Loop Iteration: 3
+                                        # 	Inner Loop Iteration: 4
+                                        #
+                                        # Outer Loop Iteration:, 2
+                                        # 	Inner Loop Iteration: 3
+                                        # 	Inner Loop Iteration: 4
+                                        #
+                                        # Outer Loop Iteration:, 3
+                                        # 	Inner Loop Iteration: 4
+
+''' 'While True' allows continuous iteration through both loops while the statement 
+remains true with i+=1 (i = i + 1)'''
+#-------------------
+
+# chars = ['A','B','C']
+# fruit = ('Apple','Banana','Cherry')
+# dict = {'name':'Mike','ref':'Python','sys':'Windows'}
+
+# print('\nElements:\t', end = '')
+# for item in chars:
+#     print(item, end = '')             # Elements:	ABC
+
+# print('\nEnumerated:\t', end = '')
+# for item in enumerate(chars):
+#     print(item, end = '')             # Enumerated:	(0, 'A')(1, 'B')(2, 'C')
+
+# print('\nZipped:\t', end = '')
+# for item in zip(chars, fruit, strict=True):
+#     print(item, end = '')
+
+# print('\nPaired:')
+# for key, value in dict.items():
+#     print(key, '=', value)            # Paired:
+                                        # name = Mike
+                                        # ref = Python
+                                        # sys = Windows
+'''These are various ways to loop over an item(s). It is like
+ 'While True' but it has a determined start and end.'''
+#-------------------
+
+# for i in range(1,4):
+#     for j in range(1,4):
+#         print('Running i=', i, 'j =',j)
+
+# Running i= 1 j = 1
+# Running i= 1 j = 2
+# Running i= 1 j = 3
+# Running i= 2 j = 1
+# Running i= 2 j = 2
+# Running i= 2 j = 3
+# Running i= 3 j = 1
+# Running i= 3 j = 2
+# Running i= 3 j = 3
+
+# for i in range(1,4):
+#     for j in range(1,4):
+#         if i == 2 and j == 1:
+#             print('Breaks inner loop at i = 2 j = 1')
+#             print('Running i =', i, 'j =', j)
+#             break
+
+# for i in range(1,4):
+#     for j in range(1,4):
+#         if i == 1 and j == 1:
+#             print('Continues inner loop at i = 2 j = 1')
+#             continue
+
+''' 'Break' and 'continue' allows you to end it 
+or continue on to the next piece of code.'''
+#-------------------
+
+# global_var = 1      # global variable
+#
+# def my_vars():      # custom function
+#     local_var = 2   # local variable
+#     global inner_var#
+#     inner_var = 3
+#     print('Coerced Variable:', inner_var)
+#     print('Local Variable:', local_var)
+#     print('Global Variable:', global_var)
+
+# my_vars()           # call the custom function
+
+# Coerced Variable: 3
+# Local Variable: 2
+# Global Variable: 1
+''' When it comes to scope, global are variables that are made outside of functions and can be referenced anywhere.
+ Local scope are variables made inside the function and can be referenced outside of that function, unless you state 
+ 'global' before it.'''
+#-------------------
+
+# def echo(user, lang, sys):
+#     print('User:',user,'\nLanguage:',lang,'\nPlatform:',sys)
+
+# echo('Mike','Python','Windows')
+
+# User: Mike
+# Language: Python
+# Platform: Windows
+
+# echo(lang = 'Python',sys = 'Mac OS',user = 'Anne')
+
+# User: Anne
+# Language: Python
+# Platform: Mac OS
+
+# def mirror(user = 'Carole', lang = 'Python'):
+#     print("\nUser:", user,"\nLanguage:",lang)
+#
+# mirror()
+
+# User: Carole
+# Language: Python
+
+# mirror(lang = 'Java')
+# mirror(user = 'Tony')
+# mirror('Susan', 'C++')
+
+# User: Carole
+# Language: Python
+#
+# User: Carole
+# Language: Java
+#
+# User: Tony
+# Language: Python
+#
+# User: Susan
+# Language: C++
+
+''' You can change/update the properties of items when you supply a(n) argument(s) to a custom function. '''
+#-------------------
+
+# num = input('Enter an integer:')
+#
+# def square(num):
+#     if num.isdigit():                   # Verifies if the input is a digit and then turns into an integer and then
+#         num = int(num)                  # multiplies itself with itself to get squared.
+#         return num * num
+#     else:
+#         return 'Invalid Entry'
+#
+# print(num,'Squared Is:',square(num))    #16 Squared Is: 256
+
+
+# def square(num):
+#     if num.isdigit():
+#         num = int(num)
+#         return num * num
+#     else:
+#         return None
+#
+# result = None
+# while result is None:
+#     num = input('Enter a number:')
+#     result = square(num)
+#     if result is None:
+#         print('Invalid Entry. Please enter a valid number.')
+#
+# print(num,'Squared Is:', result)
+
+# This version will keep asking for a valid integer until a valid one is inputted. The 'square' function returns
+# 'None' if the input not a valid integer. A while loop is used to keep asking for input.
+
+# Invalid Entry. Please enter a valid number.
+# Enter a number:beans
+# Invalid Entry. Please enter a valid number.
+# Enter a number:8
+# 8 Squared Is: 64
+
+''' You can filter certain data types for when asking for input.'''
+#-------------------
+
+def function_1(x)  :return x ** 2
+def function_2(x): return x ** 3
+def function_3(x): return x ** 4
+
+callbacks = [function_1,function_2,function_3]
+
+print('\nNamed Functions:')
+for function in callbacks: print('Result:',function(3))
+
+# Named Functions:
+# Result: 9
+# Result: 27
+# Result: 81
+
+callbacks = \
+[lambda x:x**2,lambda x:x**3,lambda x:x**4]
+print('\nAnonymous Functions:')
+for function in callbacks:print('Result:', function(3))
+
+# Named Functions:
+# Result: 9
+# Result: 27
+# Result: 81
+#
+# Anonymous Functions:
+# Result: 9
+# Result: 27
+# Result: 81
+
+'''The lambda function can be used to make small one-liner functions. You can also use lambda to like sort things. 
+The expression would be something like 'sorted_numbers = sorted(numbers, key=lambda x: -x)'.
+sorted_numbers would use the sorted() function and pass a list named 'numbers' with a lambda key of 'x' being 
+negatively indexed to sort in descending order. '''
+
+#-------------------
+
+
+
+
 
 
 
