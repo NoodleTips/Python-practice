@@ -1,4 +1,4 @@
-# import datetime
+import datetime
 import random
 import asyncio
 
@@ -227,7 +227,50 @@ print strings when true.'''
 # main()
 
 # *###########################################################
+# ! 9
 
+# Generate a random number between 1 and 9 (including 1 and 9). Ask the user to guess the
+# number, then tell them whether they guessed too low, too high, or exactly right. (Hint: remember to use the user input lessons from the very first exercise)
+
+# secret_number = random.randint(1,9)
+#
+# attempts = 0
+# # loop for the user to guess the correct number
+# while True:
+#     user_guess = int(input("Guess a number between 1 and 9:"))
+#     attempts += 1
+#     if user_guess == secret_number:
+#         print(f"Congrats, you guessed correctly in {attempts} attempts.")
+#         break
+#     elif user_guess < secret_number:
+#         print("You guessed low.")
+#     else:
+#         print("You guessed high.")
+
+''' I imported random mod and created the secret number. I then init 'attempts'. Then I used a loop to keep asking 
+for user input guess for number. If-statement for feedback and if user guessed high, low or correct while incrementing 
+attempts.'''
+# *###########################################################
+# ! 10
+
+# Take two lists, say for example these two:
+# a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+# and write a program that returns a list that contains only the elements that are common between the lists (without duplicates).
+# Make sure your program works on two lists of different sizes.
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+c = set(a).intersection(b)
+
+print(c)
+
+''' By making 'a' a set, you automatically remove duplicates. Besides, sets support the intersection method. So 
+basically this converts 'a' to a set and then performs the intersection with 'b' 
+which is a list but because its part of an intersection it is also automatically converted to a set.'''
+# *###########################################################
+# ! 11
 
 
 

@@ -27,11 +27,12 @@
 #
 #
 # def main():  #! <---------------
-#     balance = function_1() #? Start thinking of something or someone. A book, waffle-iron, your cat, a group of cats,
-#                            #? a type of cat, etc...
-#     lines = get_number_of_lines()  #^^^^ Once you think of something or a goal.
-#                                    #^^^^ Think about the features, the individual parts, the next sub level down from
-#                                    #^^^^ the goal. Stick these parts under main()
+#     balance = function_1()            # Start thinking of something or someone. A book, waffle-iron, your cat,
+#     a group of cats,
+#                                       # a type of cat, etc...
+#     lines = get_number_of_lines()     # Once you think of something or a goal.
+#                                       # Think about the features, the individual parts, the next sub-level down from
+#                                       # the goal. Stick these parts under main()
 #     print(balance, lines)
 #
 #     main()
@@ -371,24 +372,24 @@ or continue on to the next piece of code.'''
 ''' You can filter certain data types for when asking for input.'''
 #-------------------
 
-def function_1(x)  :return x ** 2
-def function_2(x): return x ** 3
-def function_3(x): return x ** 4
+# def function_1(x)  :return x ** 2
+# def function_2(x): return x ** 3
+# def function_3(x): return x ** 4
 
-callbacks = [function_1,function_2,function_3]
-
-print('\nNamed Functions:')
-for function in callbacks: print('Result:',function(3))
+# callbacks = [function_1,function_2,function_3]
+#
+# print('\nNamed Functions:')
+# for function in callbacks: print('Result:',function(3))
 
 # Named Functions:
 # Result: 9
 # Result: 27
 # Result: 81
 
-callbacks = \
-[lambda x:x**2,lambda x:x**3,lambda x:x**4]
-print('\nAnonymous Functions:')
-for function in callbacks:print('Result:', function(3))
+# callbacks = \
+# [lambda x:x**2,lambda x:x**3,lambda x:x**4]
+# print('\nAnonymous Functions:')
+# for function in callbacks:print('Result:', function(3))
 
 # Named Functions:
 # Result: 9
@@ -407,6 +408,90 @@ negatively indexed to sort in descending order. '''
 
 #-------------------
 
+# title = '\nThis shit is easy\n'
+#
+# for char in title:
+#     print(char, end = '')
+#
+# for char in title:
+#     if char == 'y':
+#         print('*', end = '')
+#         continue
+#     print(char, end = '')
+#
+# for char in title:
+#     if char == 'y':
+#         print('*', end = '')
+#         pass
+#     print(char, end = '')
+
+
+# This shit is easy
+#
+# This shit is eas*
+#
+# This shit is eas*y
+
+''' The "end = '' " replaces the default newline character (\n) with a space. So instead of moving to the next line 
+to print, the cursor will add a space and print the next line on the same line.
+
+-The 'pass' keyword basically is a no-operation statement that does nothing but is used as a placeholder for future 
+changes but is needed to circumvent syntax errors. 
+
+-The 'continue' keyword is used inside a loop to skip the remaining part of the loop body. 
+The program jumps back to the start of the loop and continues onto the next iteration.'''
+#-------------------
+# def fibonacci_generator():
+#     a = b = 1
+#     while True:
+#         yield a
+#         a, b = b, a+b
+#
+# fib = fibonacci_generator()
+# for i in fib:
+#     if i > 100:
+#         break
+#     else:
+#         print('Generated:',i)
+
+''' The fibonacci_generator function  init's and sets a and b to 1 then yields a and reads b = a+b and repeats. The 
+for loop cycles while the generator tally is under 100 and then prints it.'''
+#-------------------
+
+# title = 'I have the hershey squirts'
+# try:
+#     print(titel)
+# except NameError as msg:
+#     print(msg)
+
+# name 'titel' is not defined
+
+# This prevents the program from crashing due to a NameError but instead catches the exception and assigns it to the
+# variable 'msg' and prints that instead.
+
+# except(NameError, IndexError, ValueError) as msg:
+# print(msg)
+
+# you can circumvent a crash by including multiple exception types with a list:
+
+# day = 33
+# try:
+#     if day > 31:
+#         raise ValueError('Invalid Day Number')
+# except ValueError as msg:
+#     print('The Program found An',msg)
+# finally:
+#     print('But Today Is Beautiful Anyway.')
+
+# The Program found An Invalid Day Number
+# But Today Is Beautiful Anyway.
+
+''' This defines the variable as 33. The 'try' block checks whether the value of 'day' is greater than 31. If it is, 
+the 'raise' statement raises a 'ValueError' exception with the message. The except block catches the 'ValueError 
+exception and assigns it to the variable 'msg'. This allows you to have distinct messages for each type of error and 
+than eventually gets added onto the print. The finally block executes the print function regardless if an exception 
+occurred or not. '''
+#-------------------
 
 
 
