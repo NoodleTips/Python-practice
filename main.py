@@ -260,11 +260,11 @@ attempts.'''
 # and write a program that returns a list that contains only the elements that are common between the lists (without duplicates).
 # Make sure your program works on two lists of different sizes.
 
-a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-c = set(a).intersection(b)
-
-print(c)
+# a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# c = set(a).intersection(b)
+#
+# print(c)
 
 ''' By making 'a' a set, you automatically remove duplicates. Besides, sets support the intersection method. So 
 basically this converts 'a' to a set and then performs the intersection with 'b' 
@@ -272,7 +272,58 @@ which is a list but because its part of an intersection it is also automatically
 # *###########################################################
 # ! 11
 
+# Ask the user for a number and determine whether the number is prime or not.
+# (For those who have forgotten, a prime number is a number that has no divisors.).
 
+# def prime_guess(x):
+#     if x <= 1:
+#         return False
+#
+#     for i in range(2, int(x**0.5) + 1):
+#         if x % i == 0:
+#             return False
+#
+#     return True
+#
+# x = int(input("Give me a random number: "))
+# def main():
+#     if prime_guess(x):
+#         print(f"{x} IS a prime number!")
+#     else:
+#         print(f"{x} IS NOT a prime number!")
+#
+# main()
+
+''' The function "prime_guess" takes x-the users input as an argument and if the number is less than or equal to 1, 
+it isn't prime and returns false. If x is greater, then it looks for divisors within its range (i). If x is divisible by i then it is not prime and returns false. 
+ If x isn't divisible, its a prime number and returns True. Outputs a string with the result and the number given 
+ under main().'''
+# *###########################################################
+# ! 12
+
+# Write a program that takes a list of numbers
+# (for example, a = [5, 10, 15, 20, 25]) and makes a new list of only the first and last elements of the given list.
+# For practice, write this code inside a function.
+
+a = [5, 10, 15, 20, 25]
+b = []
+
+def new_list(a,b):
+    list_length = len(a)
+    b.append(a[0])
+    b.append(a[list_length -1])
+    print(b)
+
+new_list(a,b)
+
+#[5, 25]
+
+'''
+Two lists, one is empty. defined "new_list" function. "list_length" var set to the length of list a. The function 
+appends index 0 of a to list b as well as the negative index of list a and then prints it. Called function.
+'''
+# *###########################################################
+# ! 13
 
 
 

@@ -493,10 +493,171 @@ than eventually gets added onto the print. The finally block executes the print 
 occurred or not. '''
 #-------------------
 
+# chars = ['A','B','C','D','E','F']
+# element = 4
+# element = element/2
+# def display(element):
+#     assert type(element) is int, "Argument is an integer!"
+#     print(f'Element {element} is {chars[element]}')
+#     # print('List element', element,'=',chars[element])
+#
+# display(element)
 
+''' The "assert" keyword allows you to test an expression in a True/False scenario to see if it works and can output 
+a custom error message when the expression is "false". If the expression is "True", the assert keyword basically 
+does nothing and the script continues. Assert keywords are removed before official releases while "except" keywords 
+remain to handle runtime errors.'''
+#-------------------
 
+# def hiss(noodle = 'A Ball Python')
+#     print(noodle,'says hi :D')
+#
+# def stare(noodle = 'A Ball Python'):
+#     print(noodle,'has a blank stare OwO')
+#
+# def cinnamon_bun_mode(noodle = 'A Ball Python'):
+#     print(noodle,'curls up to nap')
 
+''' These are custom functions for a module for my pet Ball Python named 'noodle'.
+You save the file as 'noodle.py' and import it on your project as "import noodle". '''
 
+# import noodle
+
+''' 
+Then call the functions:
+
+noodle.hiss()
+noodle.stare()
+noodle.cinnamon_bun_mode()
+
+the output will look something like:
+
+'A Ball Python says hi :D'
+'A Ball Python has a blank stare OwO'
+'A Ball Python curls up to nap'
+
+when you pass an arg to 'Noodle' to 'noodle.hiss()'  ---> noodle.hiss('Noodle')
+the output will be:
+
+'Noodle says hi :D'
+'''
+#-------------------
+
+# import sys, keyword
+#
+# print('Python Version:',sys.version)
+# print('Python Interpreter Location:',sys.executable)
+# print('Python Module Search Path:')
+# for dir in sys.path:
+#     print(dir)
+#
+# print('Python Keywords:')
+# for word in keyword.kwlist:
+#     print(word)
+
+''' You can obtain information about the python interpreter and your system by importing the 'sys' and 'keyword' 
+module. You can get the python version, the location of the interpreter as well as a list of built in keywords and 
+can be tested using the 'iskeyword()' method. '''
+#-------------------
+
+# import math, random
+#
+# x = float(input('Enter a number: '))
+# y = random.sample(range(1,100),6)   # a random list of 6 unique numbers between 1-100
+#
+#
+# print('Rounded up:', math.ceil(x))
+# print('Rounded down:', math.floor(x))
+#
+# print(x, 'Squared is:', math.pow(x, 2))
+# print('The square root of', x, 'is:', math.sqrt(x))
+#
+# print('Your lucky numbers are:', y)
+
+# Rounded up: 7
+# Rounded down: 7
+# 7.0 Squared is: 49.0
+# The square root of 7.0 is: 2.6457513110645907
+# Your lucky numbers are: [86, 14, 76, 38, 90, 8]
+
+''' The 'Math' module allows the user to perform calculations. The 'random' module can be used to randomly choose 
+and the 'sample()' method doesnt replace the values but simply creates a copy sample.'''
+#-------------------
+
+from decimal import *
+
+# item = 0.70
+# rate = 1.05
+
+# tax = item * rate
+# total = item + tax
+
+# print('Item:\t','%.2f' % item)
+# print('Item:',"{:.2f}".format(item),'\n')
+#
+# print('Tax:\t','%.2f' % tax)
+# print('Tax:',"{:.2f}".format(tax),'\n')
+#
+# print('Total:\t','%.2f' % total)
+# print('Total:',"{:.2f}".format(total))
+
+# Item:	 0.70
+# Item: 0.70
+#
+# Tax:	 0.73
+# Tax: 0.73
+#
+# Total:	 1.44
+# Total: 1.44
+
+''' 
+There are two ways to format a floating point number with 2 decimal places. The first one is the old 
+"printf-style" ---> "%.2f"
+and the newer "str.format()" style ---> "{:.2f}".format():
+'''
+
+# print('Item:\t','%.20f' % item)
+# print('Item:',"{:.20f}".format(item),'\n')
+#
+# print('Tax:\t','%.20f' % tax)
+# print('Tax:',"{:.20f}".format(tax),'\n')
+#
+# print('Total:\t','%.20f' % total)
+# print('Total:',"{:.20f}".format(total))
+
+'''
+Now with 20 decimal spaces. Results for rounding can be different depending on decimal spaces.
+'''
+
+# Item:	 0.69999999999999995559
+# Item: 0.69999999999999995559
+#
+# Tax:	 0.73499999999999998668
+# Tax: 0.73499999999999998668
+#
+# Total:	 1.43500000000000005329
+# Total: 1.43500000000000005329
+
+''' You can also use 'decimal' module and do Decimal() instead.'''
+#-------------------
+
+# from datetime import *
+#
+# today = datetime.today()
+# print('Today is:',today)
+#
+# for attr in \
+#     ['year','month','day','hour','minute','second','microsecond']:
+#     # print(attr,':\t',getattr(today,attr))
+#     print('Time',today.hour,':',today.minute,sep = '')
+#
+# day = today.strftime('%A')
+# month = today.strftime('%B')
+#
+# print('Date:', day,month,today.day)
+
+''' These are various ways to get the date and time through the datetime module.'''
+#-------------------
 
 
 
