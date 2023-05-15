@@ -659,6 +659,286 @@ Now with 20 decimal spaces. Results for rounding can be different depending on d
 ''' These are various ways to get the date and time through the datetime module.'''
 #-------------------
 
+# from time import *
+#
+# start_timer = time()
+# struct = localtime(start_timer)
+# print('\nStarting Countdown At:', strftime('%X', struct))
+# i = 10
+# while i > -1:
+#     print(i)
+#     i -= 1
+#     sleep(1)
+#
+# end_timer = time()
+# difference = round(end_timer - start_timer)
+#
+# print('\nRuntime:',difference,'Seconds')
+
+'''
+Import time() function and pass it thru localtime() and print the countdown start time. set i to 10. while i is 
+greater than -1, print i and reset i with a -1 cadence then sleep for 1 second. Then print a string that subtracts 
+the start and end times and rounds the value for a "Runtime summary".
+'''
+#-------------------
+
+# from re import *
+#
+# pattern = \
+# compile('(^|\s)[-a-z0-9_.]+@([-a-z0-9]+\.)+[a-z]{2,6}(\s|$)')
+#
+# def get_address():
+#     address = input('Enter Your Email Address:')
+#     is_valid = pattern.match(address)
+#     if is_valid:
+#         print('Valid Address:', is_valid.group())
+#     else:
+#         print('Invalid Address! Please Retry...\n')
+#
+# get_address()
+
+# Enter Your Email Address:local@doamin.tld
+# Valid Address: local@doamin.tld
+
+'''
+The 're' module allows you to use regex characters to specify a string of characters to use for input. the function 
+'get_address()' asks for an email address as input with the 'address' var. if the input matches the regex pattern, 
+it is valid and prints a string with the email address. If not, it prints a string asking to retry. The pattern 
+variable is a regex expression that is compiled into a pattern object that mimics an email address.
+'''
+#-------------------
+
+# def display(x):
+#     '''Display an argument value.'''
+#     print(x)
+#
+# display(display.__doc__)
+#
+# display(r'C:\Program Files')
+# display('\nDear' +' '+'Stranger,')
+# display('Fight for what you believe, always.\n' [:])  # [Starting index : Ending Index]
+# display('F' in 'Python')
+# display('P' in 'Python')
+
+# Display an argument value.
+# C:\Program Files
+#
+# Dear Stranger,
+# Fight for what you believe, always.
+#
+# False
+# True
+#
+
+'''
+You can manipulate string to display. One way is using a docstring (__doc___). You can also concat and slice bits of 
+a string like a list.
+'''
+#-------------------
+
+# snack = '{} and {}'.format('Burger','Fries')
+
+# print('\nReplaced:',snack)
+
+# Replaced: Burger and Fries
+
+'''
+snack var is a formatted string and uses '{}' as placeholders. It passes burger and fries and then prints that string along with 'Replaced:'.
+'''
+
+# snack = '{1} and {0}'.format('Burger','Fries')
+#
+# print('\nReplaced:',snack)
+
+#Replaced: Fries and Burger
+
+'''
+By passing the index value for the elements "Burger and fries", you can swap the positions.
+'''
+
+# snack = '%s and %s' % ('Milk', 'Cookies')
+# print('\nSubstituted:', snack)
+
+'''
+This is another way to use formatted strings and placeholders.
+'''
+#-------------------
+
+string = 'We are who we are.'
+# print('\nCapitalized:\t',string.capitalize())
+# print('\nTitled:\t\t',string.title())
+# print('\nCentered:\t\t',string.center(30,'*'))
+
+# Capitalized:	 We are who we are.
+#
+# Titled:		 We Are Who We Are.
+#
+# Centered:		 ******We are who we are.******
+
+# print('\nUppercase:\t', string.upper())
+# print('\nJoined:\t\t',string.join('**'))
+# print('\nJustified:\t',string.rjust(30,'*'))
+# print('\nReplaced:\t',string.replace('s','*'))
+
+# Uppercase:	 WE ARE WHO WE ARE.
+#
+# Joined:		 *We are who we are.*
+#
+# Justified:	 ************We are who we are.
+#
+# Replaced:	 We are who we are.
+
+'''
+These are different ways to modify the strings and print them using dot-suffixing.
+'''
+#-------------------
+import unicodedata
+# s = 'Röd'
+#
+# s = s.encode('utf-8')
+# print('\nEncoded String:',s)
+# print('Type:',type(s),'\tLength:',len(s))
+#
+#
+# s = s.decode('utf-8')
+# print('\nDecoded String:',s)
+# print('Type:',type(s),'\tLength:',len(s))
+
+# Encoded String: b'R\xc3\xb6d'
+# Type: <class 'bytes'> 	Length: 4
+#
+# Decoded String: Röd
+# Type: <class 'str'> 	Length: 3
+
+'''
+You can convert strings to different types of values with encode/decode() methods.
+'''
+
+# for i in range(len(s)):
+#     print(s[i], unicodedata.name(s[i]), sep=':')
+
+# R:LATIN CAPITAL LETTER R
+# ö:LATIN SMALL LETTER O WITH DIAERESIS
+# d:LATIN SMALL LETTER D
+
+'''
+This iterates through the characters in the string belonging to 's' and prints the character along with its unicode 
+name separated by a colon.
+'''
+
+# s = b'Gr\xc3\xb6n'
+# print('\nGreen String:', s.decode('utf-8'))
+
+# Green String: Grön
+
+'''
+This one includes hexadecimal.
+'''
+
+# s = 'Gr\N{LATIN SMALL LETTER O WITH DIAERESIS}n'
+# print('Green String:', s)
+#
+# Green String: Grön
+
+'''
+This one includes unicode character name.
+'''
+#-------------------
+# file = open('example.txt', 'w')
+#
+# print('File Name:',file.name)
+# print('File Open Mode:', file.mode)
+# print('Readable:',file.readable())
+# print('Writeable:',file.writable())
+#
+# def get_status(f):
+#     if (f.closed != False):
+#         return 'Closed'
+#     else:
+#         return 'Open'
+#
+# print('File Status:',get_status(file))
+# file.close()
+# print('\nFile Status:',get_status(file))
+
+'''
+You can open/close and read/write to them as well as get the status of said file(s).
+'''
+#-------------------
+
+# poem = 'I never saw a man who looked\n'
+# poem += 'With such a wistful eye\n'
+# poem += 'Upon that little tent of blue\n'
+# poem += 'Which prisoners call the sky\n'
+#
+# file = open('poem.txt','w')
+#
+# file.write(poem)
+# file.close()
+#
+# file = open('poem.txt','r')
+# for line in file:
+#     print(line,end='')
+# file.close()
+
+'''
+This is how you create a txt file named 'poem' and writes a poem to it
+and then eventually prints it for the output.
+'''
+#-------------------
+
+text = 'The political slogan "Workers Of The World Unite!" is from The Communist Manifesto.'
+
+with open('update.txt','w') as file:
+    file.write(text)
+    print('\nFile Now Closed?:',file.closed)
+
+with open('update.txt','r+') as file:
+    text = file.read()
+    print('\nString:',text)
+
+    print('\nPosition In File Now:',file.tell())
+    position = file.seek(33)
+    print('Position In File Now:',file.tell())
+
+# File Now Closed?: False
+#
+# String: The political slogan "Workers Of The World Unite!" is from The Communist Manifesto.
+#
+# Position In File Now: 83
+# Position In File Now: 33
+#
+# Process finished with exit code 0
+
+    # file.write('All lands')
+    # file.seek(59)
+    # file.write('the tombstone of Karl Marx')
+    # file.seek(0)
+    # text = file.read()
+    # print('\nString:',text)
+
+
+# File Now Closed?: False
+#
+# String: The political slogan "Workers Of The World Unite!" is from The Communist Manifesto.
+#
+# Position In File Now: 83
+# Position In File Now: 33
+#
+# String: The political slogan "Workers Of All lands Unite!" is from the tombstone of Karl Marx
+
+'''
+This is how you update file strings and figure out there position.
+'''
+#-------------------
+
+
+
+
+
+
+
+
 
 
 
