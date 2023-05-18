@@ -584,7 +584,7 @@ can be tested using the 'iskeyword()' method. '''
 and the 'sample()' method doesnt replace the values but simply creates a copy sample.'''
 #-------------------
 
-from decimal import *
+# from decimal import *
 
 # item = 0.70
 # rate = 1.05
@@ -792,7 +792,7 @@ string = 'We are who we are.'
 These are different ways to modify the strings and print them using dot-suffixing.
 '''
 #-------------------
-import unicodedata
+# import unicodedata
 # s = 'Röd'
 #
 # s = s.encode('utf-8')
@@ -887,19 +887,19 @@ and then eventually prints it for the output.
 '''
 #-------------------
 
-text = 'The political slogan "Workers Of The World Unite!" is from The Communist Manifesto.'
-
-with open('update.txt','w') as file:
-    file.write(text)
-    print('\nFile Now Closed?:',file.closed)
-
-with open('update.txt','r+') as file:
-    text = file.read()
-    print('\nString:',text)
-
-    print('\nPosition In File Now:',file.tell())
-    position = file.seek(33)
-    print('Position In File Now:',file.tell())
+# text = 'The political slogan "Workers Of The World Unite!" is from The Communist Manifesto.'
+#
+# with open('update.txt','w') as file:
+#     file.write(text)
+#     print('\nFile Now Closed?:',file.closed)
+#
+# with open('update.txt','r+') as file:
+#     text = file.read()
+#     print('\nString:',text)
+#
+#     print('\nPosition In File Now:',file.tell())
+#     position = file.seek(33)
+#     print('Position In File Now:',file.tell())
 
 # File Now Closed?: False
 #
@@ -932,10 +932,414 @@ This is how you update file strings and figure out there position.
 '''
 #-------------------
 
+# import pickle, os
+#
+# if not os.path.isfile('pickle.dat'):
+#     data = [0,1]
+#     data[0] = input('Enter Topic:')
+#     data[1] = input('Enter Series:')
+#     file = open('pickle.dat','wb')
+#     pickle.dump(data,file)
+#     file.close()
+# else:
+#     file = open('pickle.dat','rb')
+#     data = pickle.load(file)
+#     file.close()
+#     print('\nWelcome Back To:',data[0],data[1])
+
+# Welcome Back To: Fuck! I have a headache. one
+
+'''
+Pickling is pretty much entering input data(objects) and saving it to a binary file that can be later retrieved or 
+used in other programs. So here, I imported the pickle module and the os module. if the data file does not already 
+exist, create 'pickle.dat'. data is a list of two elements (0 and 1). Then the file open statement for writing to a 
+binary file. Then it dumps the pickle data into the file. Then close the file. Else, open 'pickle.dat' and read 
+binary. Then it loads the data from the file and then closes it. Finally a string is printed with the input data.
+'''
+#-------------------
+
+# class ClassName:
+    #''' class-doc-string'''
+    # class-variable-declarations
+    # class-method definitions
+
+# class Snake:
+#     ''' A base class for all snake properties. '''
+#     count = 0
+#     def __init__(self,chat):
+#         self.sound = chat
+#         Snake.count += 1
+#     def talk(self):
+#         return self.sound
+
+# HOW TO USE THIS /\
+
+#Create two instances of 'Snake'
+# snake1 = Snake('Hiss')
+# snake2 = Snake('Sssss')
+
+# Call the talk method from 'Snake'.
+# print(snake1.talk())
+# print(snake2.talk())
+
+# Print the total number of snake instances
+# print(Snake.count)
+
+# output:
+
+# Hiss
+# Sssss
+# 2
+
+'''
+a class is an object that can contain both functions and variables to characterize the object.
+class functions = 'methods' ---> class-name.method-name()
+class variables = 'attributes' ---> class-name.attribute-name
+
+-'Count' is a class variable that is shared with all instances of the class.
+-'__init__()' is how the class is initialized and is automatically called when the class instance is created.
+-The '__init__()' initializes an instance variable 'sound' with the value from the 'chat' argument and increments the 
+value of the class variable 'count' by 1. 
+- The second method, 'talk()' is declared like a regular function, except the first argument is automatically 
+included due to it being in a class.
+- The 'talk()' method simply returns the value encapsulated in the 'sound' instance variable.
+'''
+#-------------------
+
+# class Bird:
+#     '''A base class to define bird properties.'''
+#     count=0
+#
+# def __init__(self,chat):
+#     self.sound = chat
+#     Bird.count += 1
+#
+# def talk(self):
+#     return self.sound
+
+# from Bird import *
+
+# print('\nClass Instances Of:\n',Bird.__doc__)
+# polly = Bird('Squawk, squawk!')
+# harry = Bird('Tweet, tweet!')
+#
+# print('\nNumber of Birds:', polly.count)
+# print('Polly Says:', polly.talk())
+#
+#
+# print('\nNumber of Birds:', harry.count)
+# print('Harry Says:', harry.talk())
+
+# Class Instances Of:
+# A base class to define bird properties.
+
+# Number of Birds: 1
+# Polly Says: Squawk, Squawk!
+
+# Number of Birds: 2
+# Harry Says: Tweet, tweet!
+'''
+I created a class named 'Bird' and imported it into another file. I then printed the document string from bird. I 
+then created two instances of the class and named them 'polly' and 'harry' and passed different strings in each of 
+them. Then I printed the instance variable(count) and called the class method( talk() ).
+'''
+#-------------------
+
+# from Bird import *
 
 
+# chick = Bird('Cheep, cheep!')
+# chick.age = '1 week'
+#
+# print('\nChick Says:',chick.talk())
+# print('Chick Age:',chick.age)
+#
+# chick.age = '2 weeks'
+# print('Chick Now:',chick.age)
+#
+# setattr(chick,'age','3 weeks')
+#
+# print('\nChick Attributes...')
+# for attrib in dir(chick):
+#     if attrib[0] != '_':
+#         print(attrib,':',getattr(chick,attrib))
+#
+#
+# delattr(chick,'age')
+# print('\nChick age Attribute?',hasattr(chick,'age'))
+
+'''
+I created an instance of Bird called 'chick' and then used dot notation to add a new attribute [age] and assigned it 
+a value, then printed both. I then modified the new attribute to display the new value. I then modified once more but with a built-in function [ setattr() ].
+Then I printed a list of all non-private instance attributes and their values using a built in function. For 
+attribute in chick, if the first character of the attribute starts with '_', then print the attribute, ':', 
+getattr(chick, attrib). Finally, I removed the new attribute and confirmed its removal with a built-in function.
+[ delattr() and hasattr() ]
+'''
+#-------------------
+
+# from Bird import *
+
+# zola = Bird('Beep,beep!')
+# print('\nBuilt-in Instance Attributes...')
+# for attrib in dir(zola):
+#     if attrib[0] == '_':
+#         print(attrib)
+#
+# print('\nClass Dictionary...')
+# for item in Bird.__dict__:
+#     print(item,':',Bird.__dict__[item])
+#
+# print('\nInstance Dictionary...')
+# for item in zola.__dict__:
+#     print(item,':',zola.__dict__[item])
+
+'''
+I imported the Bird module nd added a statement to create an instance of 'Bird' named 'zola'.
+I then added a loop to display built-in instance attributes. for attribute in directory(zola), if the attribute 
+starts with '_', then print the attribute.
+Then I added a loop to display all items in the class dictionary.
+For item in Bird dictionary, print the item from bird dictionary(item).
+Finally, I added a loop to display all items in the instance dictionary.
+for item in zola dictionary, print the item from zola dictionary(item).
+'''
+#-------------------
+
+# See garbage.py and Songbird.py #
+
+# OUTPUT:
+# Koko Is Born...
+# Koko ID: 2456059903952
+# Koko Sings: Tweet, tweet!
+#
+# Koko Flew Away!
+#
+# Louie Is Born...
+# Louie ID: 2456059903952
+# Louie Sings: Chirp, chirp!
+#
+# Misty Is Born...
+# Misty ID: 2456059903760
+# Misty Sings: Squawk, squawk!
+#
+# Louie Flew Away!
+#
+# Misty Flew Away!
+
+'''
+I created a class named 'Songbird' that declares an initializer method
+along with two instance variables and prints one of the two variables.
+Next, I added a method, 'sing', ti print both variable values.
+I then added a delete method that prints the deletion as confirmation.
+I then created 'garbage.py' and imported the 'songbird' class.
+I then created an instance of songbird named 'bird_1' and had it display its instance attributes.
+I then deleted 'bird_1' and created 'bird_2' and 'bird_3', had them display their attributes
+and then deleted them.
+'''
+#-------------------
+
+# SEE Polygon.py / Rectangle.py / Triangle.py
+# from Rectangle import *
+# from Triangle import *
+#
+# rect = Rectangle()
+# trey = Triangle()
+#
+# rect.set_values(4,5)
+# trey.set_values(4,5)
+#
+# print('Rectangle Area:',rect.area())
+# print('Triangle Area:',trey.area())
+
+# OUTPUT:
+
+# Rectangle Area: 20
+# Triangle Area: 10.0
+
+'''
+I created a class named 'Polygon' and set the width and height to 0. I then defined two class variables and a method 
+to set their values.
+I then created a class named 'Rectangle' and passed 'Polygon' as an argument to make it derived. I then defined 
+'area' as a method and made it return width multiplied by height.
+I then created another class named 'Triangle' and passed 'Polygon' as an argument to make it derived. I then defined
+'area' as a method and made it return width multiplied by height divided by 2.
+I then imported both 'Rectangle' and 'Triangle' into the bones and created an instance of each derived class ( 'rect' and 'trey' )
+I then called both instances and used a class method from 'Polygon' ( .set_values ) and then passed 4 and 5 as 
+arguments in the method. Finally, I printed both.
+
+Polygon served as a the base class that provided the method ( set_values ) to both 'Rectangle' and 'Triangle' 
+modules, so I was able to manipulate them differently.
+
+Polygon ---> Rectangle / Triangle ---> the bones
+'''
+#-------------------
+
+# from Man import *
+# from Hombre import *
+#
+# guy_1 = Man('Richard')
+# guy_2 = Hombre('Ricardo')
+#
+#
+# guy_1.speak('It\'s a beautiful evening.\n')
+# guy_2.speak('Es una tarde hermosa.\n')
 
 
+# Person.speak(guy_1)
+# Person.speak(guy_2)
+#
+# Richard
+# 	Hello! It's a beautiful evening.
+#
+# Ricardo
+# 	Hola! Es una tarde hermosa.
+#
+# Richard Calling The Base Class
+# Ricardo Calling The Base Class
+
+'''
+A method can be declared in a derived class to override a matching method in the base class.
+I first created a base class, 'Person', that declares an init method to set an instance variable, 'name'.
+I then created a second method, 'speak', that prints 'name' along with 'msg'.
+I then created a derived class, 'Man' that overrides the second base class method, 'speak', that prints the name, 
+a greeting and a short message.
+I then created a derived class, 'Hombre', that essentially does the same thing as 'Man', but in spanish.
+I then imported both 'Man' and 'Hombre' and created an instance of both derived classes in the bones and named them 
+'guy_1' and 'guy_2' and then passed the names, 'Richard' and 'Ricardo' in them.
+I then called the overriding methods of each derived class and assigning different values to the 'msg'.
+I then called the base class method and passed the derived classes without 'msg', so the default value will be 
+displayed, for comparison.
+'''
+#-------------------
+
+# See 'Duck.py' / 'Mouse.py'
+
+# from Duck import *
+# from Mouse import *
+#
+# def describe(object):
+#     object.talk()
+#     object.coat()
+#
+# donald = Duck()
+# mickey = Mouse()
+#
+# describe(donald)
+# describe(mickey)
+
+# Duck says: Quack!
+#
+# Duck wears: Feathers
+#
+# Mouse Says: Squeak!
+#
+# Mouse wears: Fur
+
+
+'''
+I first created a class named 'Duck' that declares 2 methods that print a unique string in both.
+I then created a class named 'Mouse' that declares 2 methods that also print a unique string in both. ('talk' and 
+'coat').
+I then imported both 'Duck' and 'Mouse' modules and then defined a function that accepts any single object as its 
+argument and then calls the methods of that object.
+I then created an instance of each class and named them 'donald' and 'mickey'.
+I then called the 'describe' function passed each instance ( 'donald' and 'mickey' ) as an argument.
+
+In short, I created two animals and then made a function that describes the individualized version of the animal and 
+then passed the individual in the function. This is because classes can only have one method with a particular name.
+'''
+#-------------------
+
+# See response.py
+
+'''
+This is how you set up a python script to generate an html document.
+'''
+#-------------------
+
+# from tkinter import *
+#
+# window = Tk()
+# window.title('Label example')
+#
+# label = Label(window,text='Howdy bish!')
+# label.pack(padx=200,pady=50)
+#
+# window.mainloop()
+
+'''
+I am using the 'tkinter' module to create a a GUI. 
+I first import 'tkinter' and call a constructor [ Tk() ] to create the 'window' object.
+I then specify a title for 'window'.
+I then call the 'Label' constructor to create a label for 'window' and set the text to 'Howdy bish!'.
+I then call the label with the packer to set the dimensions of the window padding on X/Y - axis.
+Finally, I then call the window with the mainloop() to keep the program running.
+'''
+#-------------------
+
+# from tkinter import *
+#
+# window = Tk()
+# window.title('Button example')
+#
+# btn_end = Button(window,text='Close',command=exit)
+# def tog():
+#     if window.cget('bg') == 'yellow':
+#         window.configure(bg = 'gray')
+#     else:
+#         window.configure(bg = 'yellow')
+#
+# btn_tog = Button(window,text = 'Switch',command=tog)
+# btn_tog.pack(padx=150,pady=20)
+# btn_end.pack(padx=150,pady=20)
+#
+#
+# window.mainloop()
+
+'''
+I first imported tkinter and then created an instance called 'window' and gave it a title called 'Button Example'.
+I then created a button called 'btn_end' that has the text of 'close' and takes the command exit.
+I then added a function to toggle window's background color when another button is clicked.
+tog(): if the window [.cget() = config get] background is yellow, configure the window bg to 'gray'. Else, 
+configure the window bg to 'yellow'.
+I then created a button to call the function when clicked (btn_tog).
+The button (btn_tog) is given the text of 'switch' and takes the toggle command.
+I then added the buttons ('btn_tog' and 'btn_end') to the window with packer and passed padding dimensions.
+Then I called the window mainloop.
+'''
+#-------------------
+
+# from tkinter import *
+# import tkinter.messagebox as box
+#
+# window = Tk()
+# window.title('Message Box Example')
+#
+# def dialog():
+#     var = box.askyesno('Message Box','Proceed?')
+#     if var == 1:
+#         box.showinfo('Yes Box','Proceeding...')
+#     else:
+#         box.showwarning('No Box','Canceling...')
+#
+# btn = Button(window,text = 'Click',command=dialog)
+# btn.pack(padx=150,pady=50)
+#
+# window.mainloop()
+
+'''
+I imported tkinter and the tkinter.messagebox module and set messagebox to the 'box' alias.
+I then created 'window' and give it the title, 'Message Box Example'.
+I then created a function named 'dialog' to display various message boxes.
+I used the 'askyesno' method. When the button is clicked a messagebox pops up and states 'Proceed?' and the
+user is given 'yes'' and 'no options.
+if 'var' is 1 (yes), the box will show 'Proceeding...'.
+else, the box will show 'Canceling...'.
+The messagebox icon for 'yes' uses [.showinfo()] and 'no' uses [.showwarning()]
+I then created a button to call the function when clicked. (This the first initial button)
+I then used the packer with the button to set the padding dimensions and then finally called the window with mainloop.
+'''
+#-------------------
 
 
 
