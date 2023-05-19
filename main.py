@@ -1,10 +1,9 @@
-import datetime
-import random
-import asyncio
+# import datetime
+# import random
+# import asyncio
 
 
-
-"""Python Journal"""
+# Python Journal #
 
 # ! 1
 # Create a program that asks the user to enter their name and their age.
@@ -20,8 +19,8 @@ import asyncio
 # remaining_years = 100 - user_age
 # hundredth_year = current_year + remaining_years
 # print("You will turn one hundred on the year: ", hundredth_year)
-''' user_name asks for the name and user_age asks for the age. remaining_years subtracts the age from 100. 
-hundredth_year adds remaining years to current_year which is pulled from today.year method from imported datetime.'''
+# ''' user_name asks for the name and user_age asks for the age. remaining_years subtracts the age from 100.
+# hundredth_year adds remaining years to current_year which is pulled from today.year method from imported datetime.'''
 # *###########################################################
 # ! 2
 # Ask the user for a number.
@@ -34,8 +33,8 @@ hundredth_year adds remaining years to current_year which is pulled from today.y
 #     print('The number is even.')
 # else:
 #     print('The number is odd.')
-''' random_number is an input integer with a string asking for a random number. if random_number mod 2 = 0, 
-then it is even and print 1st statement, else print 2nd statement if the number is odd.'''
+# ''' random_number is an input integer with a string asking for a random number. if random_number mod 2 = 0,
+# then it is even and print 1st statement, else print 2nd statement if the number is odd.'''
 # *###########################################################
 # ! 3
 # from operator import index
@@ -50,7 +49,7 @@ then it is even and print 1st statement, else print 2nd statement if the number 
 #     if x < 5:
 #         b.append(x)
 #         print(b)
-''' for the item in a, if the item is less than 5, append it to b and then print it.'''
+# ''' for the item in a, if the item is less than 5, append it to b and then print it.'''
 # *###########################################################
 # ! 4
 # Create a program that asks the user for a number and then prints out a list of all the divisors of that number.
@@ -63,8 +62,9 @@ then it is even and print 1st statement, else print 2nd statement if the number 
 # for i in range(1, user_number+1):
 #     if (user_number % i == 0):
 #         print(i)
-''' user_number is an input integer asking for a random number. results is a string as a title for the results to 
-follow. for item in range from 1 to the users number with +1 cadence, if the users number is mod whatever the item is and it equals 0, print the items.'''
+# ''' user_number is an input integer asking for a random number. results is a string as a title for the results to
+# follow. for item in range from 1 to the users number with +1 cadence, if the users number is mod whatever the item
+# is and it equals 0, print the items.'''
 # *###########################################################
 # ! 5
 # Take two lists, say for example these two:
@@ -78,8 +78,8 @@ follow. for item in range from 1 to the users number with +1 cadence, if the use
 # a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 # b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
-'''need to print a list from a set. The x for x in list a, if x also in b. it should print like values from the two 
-lists.'''
+# '''need to print a list from a set. The x for x in list a, if x also in b. it should print like values from the two
+# lists.'''
 
 # print(list(set(x for x in a if x in b)))
 
@@ -102,9 +102,9 @@ lists.'''
 # else:
 #     print("The word needs to be at least 2 characters.")
 
-''' while the user input string is greater than 2 characters and if the user string equals the user input string in 
-reverse( [::-1] ), print the first statement. Else print second statement. If the user input string is not greater 
-than 2 characters, print 3rd statement.'''
+# ''' while the user input string is greater than 2 characters and if the user string equals the user input string in
+# reverse( [::-1] ), print the first statement. Else print second statement. If the user input string is not greater
+# than 2 characters, print 3rd statement.'''
 
 # *###########################################################
 # ! 7
@@ -119,8 +119,8 @@ than 2 characters, print 3rd statement.'''
 #         b.append(item)
 #         print(b)
 
-''' for item in list "a", if the item mod 2 equals 0, then it is even and appends the item to the empty list "b" and 
-prints it.'''
+# ''' for item in list "a", if the item mod 2 equals 0, then it is even and appends the item to the empty list "b" and
+# prints it.'''
 # *###########################################################
 # ! 8
 # Make a two-player Rock-Paper-Scissors game.
@@ -130,8 +130,6 @@ prints it.'''
 # Compare rock paper and scissor objects
 # print out a message of the outcome
 # print input new game
-
-
 
 
 # options = ['Rock','Paper','Scissors']
@@ -157,8 +155,8 @@ prints it.'''
 #         elif check == "yes": continue
 #         else: print("Invalid input type: 'yes' or 'no'")
 
-'''Three options, two players. ask for input with provided string options. Then if statement with conditions that 
-print strings when true.'''
+# '''Three options, two players. ask for input with provided string options. Then if statement with conditions that
+# print strings when true.'''
 # Option # 2(unfinished):
 #
 # def wanna_play():
@@ -247,9 +245,10 @@ print strings when true.'''
 #     else:
 #         print("You guessed high.")
 
-''' I imported random mod and created the secret number. I then init 'attempts'. Then I used a loop to keep asking 
-for user input guess for number. If-statement for feedback and if user guessed high, low or correct while incrementing 
-attempts.'''
+# ''' I imported random mod and created the secret number. I then init 'attempts'. Then I used a loop to keep asking
+# for user input guess for number. If-statement for feedback and if user guessed high, low or correct while
+# incrementing
+# attempts.'''
 # *###########################################################
 # ! 10
 
@@ -266,9 +265,9 @@ attempts.'''
 #
 # print(c)
 
-''' By making 'a' a set, you automatically remove duplicates. Besides, sets support the intersection method. So 
-basically this converts 'a' to a set and then performs the intersection with 'b' 
-which is a list but because its part of an intersection it is also automatically converted to a set.'''
+# ''' By making 'a' a set, you automatically remove duplicates. Besides, sets support the intersection method. So
+# basically this converts 'a' to a set and then performs the intersection with 'b'
+# which is a list but because its part of an intersection it is also automatically converted to a set.'''
 # *###########################################################
 # ! 11
 
@@ -294,10 +293,10 @@ which is a list but because its part of an intersection it is also automatically
 #
 # main()
 
-''' The function "prime_guess" takes x-the users input as an argument and if the number is less than or equal to 1, 
-it isn't prime and returns false. If x is greater, then it looks for divisors within its range (i). If x is divisible by i then it is not prime and returns false. 
- If x isn't divisible, its a prime number and returns True. Outputs a string with the result and the number given 
- under main().'''
+# ''' The function "prime_guess" takes x-the users input as an argument and if the number is less than or equal to 1,
+# it isn't prime and returns false. If x is greater, then it looks for divisors within its range (i). If x is divisible by i then it is not prime and returns false.
+#  If x isn't divisible, its a prime number and returns True. Outputs a string with the result and the number given
+#  under main().'''
 # *###########################################################
 # ! 12
 
@@ -305,25 +304,76 @@ it isn't prime and returns false. If x is greater, then it looks for divisors wi
 # (for example, a = [5, 10, 15, 20, 25]) and makes a new list of only the first and last elements of the given list.
 # For practice, write this code inside a function.
 
-a = [5, 10, 15, 20, 25]
-b = []
+# a = [5, 10, 15, 20, 25]
+# b = []
+#
+# def new_list(a,b):
+#     list_length = len(a)
+#     b.append(a[0])
+#     b.append(a[list_length -1])
+#     print(b)
+#
+# new_list(a,b)
 
-def new_list(a,b):
-    list_length = len(a)
-    b.append(a[0])
-    b.append(a[list_length -1])
-    print(b)
+# [5, 25]
 
-new_list(a,b)
+# '''
+# Two lists, one is empty. defined "new_list" function. "list_length" var set to the length of list a. The function
+# appends index 0 of a to list b as well as the negative index of list a and then prints it. Called function.
+# '''
 
-#[5, 25]
 
-'''
-Two lists, one is empty. defined "new_list" function. "list_length" var set to the length of list a. The function 
-appends index 0 of a to list b as well as the negative index of list a and then prints it. Called function.
-'''
 # *###########################################################
 # ! 13
+
+# Write a program that asks the user how many Fibonacci numbers to generate and then generates them.
+# Take this opportunity to think about how you can use functions. Make sure to ask the user to enter the number of numbers in the sequence to generate.
+# (Hint: The Fibonacci sequence is a sequence of numbers where the next number in the sequence is the sum of the
+# previous two numbers in the sequence.
+# The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …)
+
+# def fib_gen(n):
+#     a, b = 0, 1
+#     for _ in range(n):
+#         yield a
+#         a, b = b, a + b
+#
+#
+# num = int(input('How many u want, cuh?:'))
+# fib = fib_gen(num)
+# print(list(fib))
+
+# How many u want, cuh?:8
+# [0, 1, 1, 2, 3, 5, 8, 13]
+
+"""
+The fib_gen() function produces the first 'n' amount of numbers in the fibonacci sequence.
+I set 'a' and 'b' to 0 and 1, respectively.
+For '_' in the range of 'n', yield a. I ask how many and set it to num.
+I make an instance of fib_gen and name it fib and pass num to it.
+I then print a list of fib.
+"""
+# *###########################################################
+# ! 14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
